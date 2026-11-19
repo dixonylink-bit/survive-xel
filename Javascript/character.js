@@ -17,4 +17,32 @@ class player {
 
         this.gameScreen.appendChild(this.element)
     }
+
+    moveUp(){
+        if(this.y >= 1){
+        this.y -= 1
+        this.element.style.top = `${this.y}%`
+    }
+    }
+
+    moveDown() {
+        if (this.y <= 94){
+        this.y += 1
+         this.element.style.top = `${this.y}%`
+        }
+    }
+
+    moveRight() {
+        if (this.x <= 96){
+        this.x += 1
+        this.element.style.left = `${this.x}%`
+    }
+    }
+
+    moveLeft() {
+        if(this.x >= 1){
+        this.x -= 1
+        this.element.style.left = `${this.x}%`
+    }
+    }
 }
