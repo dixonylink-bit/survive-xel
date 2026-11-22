@@ -49,14 +49,14 @@ class player {
     moveRight() {
         if (this.x + this.speed <= this.gameScreen.clientWidth - this.width){
         this.x += this.speed
-        this.updatePosition()
+        this.element.style.left = `${this.x}px`
     }
     }
 
     moveLeft() {
         if(this.x > this.speed >= 0){
         this.x -= this.speed
-        this.updatePosition()
+        this.element.style.left = `${this.x}px`
     }
     }
 

@@ -39,12 +39,18 @@ spawnPlatform() {
 
 collisionDetection(player, platform) {
     if(
-        player.x + player.width < platform.x||
+        player.x + player.width < platform.x ||
         player.x > platform.x + platform.width ||
         player.y + player.height < platform.y ||
         player.y > platform.y + platform.height) {
          return false   
         }
         return true
+}
+
+gameOver(){
+     this.startScreen.style.display = "none"
+    this.gameScreen.style.display = "flex"
+
 }
 }
