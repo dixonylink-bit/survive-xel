@@ -4,13 +4,47 @@ class Game {
         this.endScreen = document.querySelector(".end-screen")
         this.startScreen = document.querySelector(".start-screen")
         this.player = null
+        this.gameInterval = null
+        this.platforms = []
     }
 
 startGame() {
     this.startScreen.style.display = "none"
     this.gameScreen.style.display = "flex"
     this.player = new player()
+
+    this.spawnPlatform()
+    
+    this.gameInterval = setInterval(() =>{
+        this.jump()
+
+        this.platforms.forEach((platform) => {
+            if (this.collisionDetection(this.player, platform)) {
+                this.player.bounce(platform)
+
+            }
+        })
+    }, 1000 / 60)
+
+
 }
 
-animate() {}
+jump() {
+    this.player.jump()
+}
+
+spawnPlatform() {
+  this.platforms.push(new Platform)
+}
+
+collisionDetection(player, platform) {
+    if(
+        player.x + player.width < platform.x||
+        player.x > platform.x + platform.width ||
+        player.y + player.height < platform.y ||
+        player.y > platform.y + platform.height) {
+         return false   
+        }
+        return true
+}
 }
