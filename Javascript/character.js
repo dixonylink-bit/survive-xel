@@ -10,9 +10,9 @@ class player {
         this.image = "../assets/blackbox (1).jpeg"
         
         this.velocityY = 0
-        this.gravity = 0.4
-        this.jumpStrength = -12
-        this.speed = 8
+        this.gravity = 0.6
+        this.jumpStrength = -22
+        this.speed = 10
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`
@@ -32,11 +32,6 @@ class player {
     jump() {
         this.velocityY += this.gravity
         this.y += this.velocityY
-        
-        if( this.y >= this.groundY) {
-            this.y = this.groundY
-            this.velocityY = this.jumpStrength
-        }
         this.updatePosition()
     }
 
@@ -44,7 +39,12 @@ class player {
         this.y = platform.y - this.height
         this.velocityY = this.jumpStrength
         this.updatePosition()
+
     }
+
+     remove() {
+            this.element.remove()
+        }
 
     moveRight() {
         if (this.x + this.speed <= this.gameScreen.clientWidth - this.width){
@@ -54,10 +54,7 @@ class player {
     }
 
     moveLeft() {
-        if(this.x > this.speed >= 0){
-        this.x -= this.speed
+       this.x = Math.max(0, this.x - this.speed)
         this.element.style.left = `${this.x}px`
     }
     }
-
-}

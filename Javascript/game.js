@@ -24,6 +24,10 @@ startGame() {
 
             }
         })
+
+        if (this.player.y > this.gameScreen.clientHeight) {
+            this.gameOver()
+        }
     }, 1000 / 60)
 
 
@@ -49,8 +53,10 @@ collisionDetection(player, platform) {
 }
 
 gameOver(){
-     this.startScreen.style.display = "none"
-    this.gameScreen.style.display = "flex"
+    clearInterval(this.gameInterval)
+      this.player.remove()  
+     this.gameScreen.style.display = "none"
+    this.endScreen.style.display = "flex"
 
 }
 }
