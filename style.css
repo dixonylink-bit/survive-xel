@@ -8,12 +8,12 @@
     height: 90vh;
     border: 1px solid black;
     position: relative;
+    overflow: hidden;
 }
 
 .game-screen,
 .end-screen {
     display: none;
-    overflow: hidden;
 }
 
 .start-screen {
@@ -21,7 +21,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 body {

@@ -42,6 +42,13 @@ class player {
 
     }
 
+    bounce(floatingPlatform) {
+        this.y = floatingPlatform.y - this.height
+        this.velocityY = this.jumpStrength
+        this.updatePosition()
+
+    }
+
      remove() {
             this.element.remove()
         }

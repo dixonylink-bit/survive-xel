@@ -6,6 +6,7 @@ class Game {
         this.player = null
         this.gameInterval = null
         this.platforms = []
+        this.floatingPlatforms = []
     }
 
 startGame() {
@@ -18,9 +19,9 @@ startGame() {
     this.gameInterval = setInterval(() =>{
         this.jump()
 
-        this.platforms.forEach((platform) => {
-            if (this.collisionDetection(this.player, platform)) {
-                this.player.bounce(platform)
+        this.platforms.forEach((platform, floatingPlatform) => {
+            if (this.collisionDetection(this.player, platform) && this.player.velocityY > 0) {
+                this.player.bounce(platform, floatingPlatform)
 
             }
         })
@@ -38,7 +39,8 @@ jump() {
 }
 
 spawnPlatform() {
-  this.platforms.push(new Platform)
+  this.platforms.push(new Platform())
+  this.platforms.push(new FloatingPlatform())
 }
 
 collisionDetection(player, platform) {
@@ -51,6 +53,7 @@ collisionDetection(player, platform) {
         }
         return true
 }
+
 
 gameOver(){
     clearInterval(this.gameInterval)
