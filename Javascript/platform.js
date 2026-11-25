@@ -2,10 +2,10 @@ class Platform {
     constructor() {
            this.gameScreen = document.querySelector(".game-screen")
         this.element = document.createElement("div")
-        this.width = 150
-        this.height = 30
-        this.x = 240
-        this.y = this.gameScreen.clientHeight - 50
+        this.width = 70
+        this.height = 10
+        this.x = 150
+        this.y = this.gameScreen.clientHeight - 10
         this.image = "../assets/yester-30-matt-powder-coating-20kg-box--1396-p.jpg"
 
         this.element.style.position = "absolute"

@@ -2,17 +2,17 @@ class player {
     constructor() {
         this.gameScreen = document.querySelector(".game-screen")
         this.element = document.createElement("div")
-        this.width = 30
-        this.height = 50
-        this.x = 300
+        this.width = 10
+        this.height = 10
+        this.x = 180
         this.groundY = this.gameScreen.clientHeight - this.height
         this.y = this.groundY
         this.image = "../assets/blackbox (1).jpeg"
         
         this.velocityY = 0
-        this.gravity = 0.6
-        this.jumpStrength = -22
-        this.speed = 10
+        this.gravity = 0.9
+        this.jumpStrength = -15
+        this.speed = 18
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`

@@ -1,5 +1,6 @@
 const startScreen = document.querySelector(".start-screen")
 const gameScreen = document.querySelector(".game-screen")
+const winScreen = document.querySelector(".win-screen")
 const endScreen = document.querySelector(".end-screen")
 const startButton = document.querySelector(".start-btn")
 

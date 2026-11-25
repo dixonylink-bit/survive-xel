@@ -11,17 +11,19 @@
     overflow: hidden;
 }
 
-.game-screen,
-.end-screen {
-    display: none;
-}
-
 .start-screen {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.game-screen,
+.win-screen,
+.end-screen {
+    display: none;
+}
+
 
 body {
     display: flex;

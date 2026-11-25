@@ -1,12 +1,13 @@
 class Game {
     constructor() {
+       this.startScreen = document.querySelector(".start-screen")
         this.gameScreen = document.querySelector(".game-screen")
+        this.winScreen = document.querySelector(".win-screen")
         this.endScreen = document.querySelector(".end-screen")
-        this.startScreen = document.querySelector(".start-screen")
         this.player = null
-        this.gameInterval = null
         this.platforms = []
-        this.floatingPlatforms = []
+        this.gameInterval = null
+        this.animationInterval = null
     }
 
 startGame() {
@@ -19,9 +20,10 @@ startGame() {
     this.gameInterval = setInterval(() =>{
         this.jump()
 
-        this.platforms.forEach((platform, floatingPlatform) => {
+        this.platforms.forEach((platform) => {
             if (this.collisionDetection(this.player, platform) && this.player.velocityY > 0) {
-                this.player.bounce(platform, floatingPlatform)
+                this.player.bounce(platform)
+                platform.moving = false
 
             }
         })
@@ -31,6 +33,9 @@ startGame() {
         }
     }, 1000 / 60)
 
+          this.animationInterval = setInterval(() => {
+            this.animate()
+        }, 60)
 
 }
 
@@ -38,9 +43,24 @@ jump() {
     this.player.jump()
 }
 
+animate() {
+    this.platforms.forEach((platform) => {
+        if (platform.move) platform.move()
+    })
+}
+
 spawnPlatform() {
   this.platforms.push(new Platform())
-  this.platforms.push(new FloatingPlatform())
+
+  const rows = 6
+  const topGap = 120
+  const groundTop = this.gameScreen.clientHeight - 20
+  const gap = (groundTop - topGap) / rows
+
+  for (let i = 1; i <= rows; i++){
+  this.platforms.push(new FloatingPlatform(groundTop - i * gap))
+  }
+  this.platforms.push(new winPlatform())
 }
 
 collisionDetection(player, platform) {
@@ -54,9 +74,17 @@ collisionDetection(player, platform) {
         return true
 }
 
+win() {
+    clearInterval(this.gameInterval)
+    clearInterval(this.animationInterval)
+    this.player.remove()
+    this.gameScreen.style.display = "none"
+    this.winScreen.style.display = "flex"
+}
 
 gameOver(){
     clearInterval(this.gameInterval)
+    clearInterval(this.animationInterval)
       this.player.remove()  
      this.gameScreen.style.display = "none"
     this.endScreen.style.display = "flex"
