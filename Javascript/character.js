@@ -2,12 +2,11 @@ class player {
     constructor() {
         this.gameScreen = document.querySelector(".game-screen")
         this.element = document.createElement("div")
-        this.width = 10
-        this.height = 10
+        this.width = 30
+        this.height = 20
         this.x = 180
-        this.groundY = this.gameScreen.clientHeight - this.height
-        this.y = this.groundY
-        this.image = "../assets/blackbox (1).jpeg"
+        this.y = 460
+        this.image = "../assets/fish.png"
         
         this.velocityY = 0
         this.gravity = 0.9
@@ -18,6 +17,10 @@ class player {
         this.element.style.width = `${this.width}px`
         this.element.style.height = `${this.height}px`
         this.element.style.backgroundImage = `url("${this.image}")`
+        this.element.style.backgroundSize = "150%"
+        this.element.style.backgroundRepeat= "no-repeat"
+        this.element.style.backgroundPosition = "center"
+        this.element.style.imageRendering = "pixelated"
         this.updatePosition()
     
 

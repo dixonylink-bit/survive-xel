@@ -24,10 +24,22 @@
     display: none;
 }
 
+.game-screen { 
+background-image: url("./assets/b8b092eb13b38b3b596810e9e561965d.gif");
+background-size: cover;
+}
+
+.end-screen{
+background-image: url("./assets/Grilled_Fish.webp");
+background-size: contain;
+background-position: center;
+
+}
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
 }

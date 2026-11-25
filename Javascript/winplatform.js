@@ -2,11 +2,11 @@ class WinPlatform {
     constructor() {
            this.gameScreen = document.querySelector(".game-screen")
         this.element = document.createElement("div")
-        this.width = 80
-        this.height = 10
+        this.width = 90
+        this.height = 76
         this.x = 500
-        this.y = 50
-        this.image = "../assets/yester-30-matt-powder-coating-20kg-box--1396-p.jpg"
+        this.y = 40
+        this.image = "../assets/Untitled_Artwork.png"
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`
@@ -14,6 +14,10 @@ class WinPlatform {
         this.element.style.top = `${this.y}px`
         this.element.style.left = `${this.x}px`
         this.element.style.backgroundImage = `url("${this.image}")`
+        this.element.style.backgroundSize = "contain"
+        this.element.style.backgroundRepeat= "no-repeat"
+        this.element.style.backgroundPosition = "center"
+        this.element.style.imageRendering = "pixelated"
 
         this.gameScreen.appendChild(this.element)
     }
