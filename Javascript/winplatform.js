@@ -1,4 +1,4 @@
-class winPlatform {
+class WinPlatform {
     constructor() {
            this.gameScreen = document.querySelector(".game-screen")
         this.element = document.createElement("div")

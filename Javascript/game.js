@@ -5,6 +5,7 @@ class Game {
         this.winScreen = document.querySelector(".win-screen")
         this.endScreen = document.querySelector(".end-screen")
         this.player = null
+        this.winPlatform = null
         this.platforms = []
         this.gameInterval = null
         this.animationInterval = null
@@ -27,6 +28,11 @@ startGame() {
 
             }
         })
+
+        if (this.collisionDetection(this.player, this.winPlatform)) {
+            this.win()
+            return
+        } 
 
         if (this.player.y > this.gameScreen.clientHeight) {
             this.gameOver()
@@ -60,7 +66,7 @@ spawnPlatform() {
   for (let i = 1; i <= rows; i++){
   this.platforms.push(new FloatingPlatform(groundTop - i * gap))
   }
-  this.platforms.push(new winPlatform())
+  this.winPlatform = new WinPlatform()
 }
 
 collisionDetection(player, platform) {
