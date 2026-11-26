@@ -5,6 +5,19 @@ const endScreen = document.querySelector(".end-screen")
 const startButton = document.querySelector(".start-btn")
 const replayButton = document.querySelector(".replay-btn")
 const restartButton = document.querySelector(".restart-btn")
+const musicButton = document.querySelector(".music-btn")
+
+const gameMusic = new Audio("./music/01-Beans on Toes.ogg");
+gameMusic.loop = true;
+gameMusic.volume = 0.2;
+
+const overMusic = new Audio("./music/GameOver.wav");
+overMusic.volume = 0.2;
+
+const winMusic = new Audio("./music/crowd_small_chil_ec049202_9klCwI6.mp3");
+winMusic.volume = 0.1;
+
+let currentMusic = gameMusic
 
 let game
 
@@ -34,4 +47,13 @@ restartButton.addEventListener("click", () => {
     game.startGame()
 })
 
+
+musicButton.addEventListener("click", () => {
+    if (currentMusic.paused) {
+        currentMusic.play();
+    } else {
+        currentMusic.pause()
+    }
+    musicButton.blur()
+})
 }) 

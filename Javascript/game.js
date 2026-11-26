@@ -17,6 +17,7 @@ startGame() {
     this.winScreen.style.display = "none"
     this.endScreen.style.display = "none"
     this.gameScreen.style.display = "flex"
+    this.changeMusic(gameMusic)
     this.player = new player()
 
     this.spawnPlatform()
@@ -95,6 +96,7 @@ win() {
     this.player.remove()
     this.platforms.forEach((platform) => platform.element.remove())
     this.winPlatform.element.remove()
+    this.changeMusic(winMusic)
     this.gameScreen.style.display = "none"
     this.winScreen.style.display = "flex"
 }
@@ -107,6 +109,18 @@ gameOver(){
     this.winPlatform.element.remove()
     this.gameScreen.style.display = "none"
     this.endScreen.style.display = "flex"
+    this.changeMusic(overMusic)
 
+}
+
+changeMusic(newMusic) {
+    if (currentMusic === newMusic) return
+    
+    const wasPlaying = !currentMusic.paused
+    currentMusic.pause()
+    currentMusic.currentTime = 0
+    currentMusic = newMusic
+
+    if (wasPlaying) currentMusic.play()
 }
 }

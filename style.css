@@ -8,6 +8,16 @@
     src: url(font/static/Tiny5Duo-Black.ttf);
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(58, 91, 161);
+    background-image: url("./assets/aa77d976114e57a093118db5b3508f0d.gif");
+
+}
+
 .screen {
     width: 40vw;
     height: 90vh;
@@ -116,10 +126,14 @@ background-position: center;
     left: 30%;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
+.music-btn {
+    position: fixed;
+    top: 50px;
+    left: 25%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: white;
+    cursor: pointer;
 }
