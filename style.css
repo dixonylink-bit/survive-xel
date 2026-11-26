@@ -82,9 +82,21 @@ background-position: center;
     font-size: 300%;
   position: absolute;
   top: 50px;
-  left: 10%;
-  width: 80%;
+  left: 19%;
+  width: 60%;
   text-align: center;
+  border-radius:25px;
+  background-color: rgb(254, 255, 216);
+}
+
+.replay-btn {
+     font-family: aquaFont;
+    font-size: 40px;
+    width: 40%;
+    border-radius: 25px;
+    position: absolute;
+    bottom:30px;
+    left: 30%;
 }
 
 .end-screen{
@@ -92,6 +104,16 @@ background-image: url("./assets/gameover.png");
 background-size: 95%;
 background-position: center;
 
+}
+
+.restart-btn {
+    font-family: aquaFont;
+    font-size: 40px;
+    width: 40%;
+    border-radius: 25px;
+    position: absolute;
+    bottom:30px;
+    left: 30%;
 }
 
 body {

@@ -3,6 +3,8 @@ const gameScreen = document.querySelector(".game-screen")
 const winScreen = document.querySelector(".win-screen")
 const endScreen = document.querySelector(".end-screen")
 const startButton = document.querySelector(".start-btn")
+const replayButton = document.querySelector(".replay-btn")
+const restartButton = document.querySelector(".restart-btn")
 
 let game
 
@@ -20,6 +22,16 @@ document.addEventListener("keydown", (e) =>{
     if(e.key === "ArrowLeft"){
         game.player.moveLeft()
     }
+})
+
+replayButton.addEventListener("click", () => {
+    game = new Game()
+    game.startGame()
+})
+
+restartButton.addEventListener("click", () => {
+    game = new Game()
+    game.startGame()
 })
 
 }) 

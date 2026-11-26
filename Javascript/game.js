@@ -14,6 +14,8 @@ class Game {
 
 startGame() {
     this.startScreen.style.display = "none"
+    this.winScreen.style.display = "none"
+    this.endScreen.style.display = "none"
     this.gameScreen.style.display = "flex"
     this.player = new player()
 
@@ -91,6 +93,8 @@ win() {
     clearInterval(this.gameInterval)
     clearInterval(this.animationInterval)
     this.player.remove()
+    this.platforms.forEach((platform) => platform.element.remove())
+    this.winPlatform.element.remove()
     this.gameScreen.style.display = "none"
     this.winScreen.style.display = "flex"
 }
@@ -98,8 +102,10 @@ win() {
 gameOver(){
     clearInterval(this.gameInterval)
     clearInterval(this.animationInterval)
-      this.player.remove()  
-     this.gameScreen.style.display = "none"
+    this.player.remove()  
+    this.platforms.forEach((platform) => platform.element.remove())
+    this.winPlatform.element.remove()
+    this.gameScreen.style.display = "none"
     this.endScreen.style.display = "flex"
 
 }
