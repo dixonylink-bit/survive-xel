@@ -9,7 +9,7 @@ class FloatingPlatform {
         const direction = Math.random() < 0.5 ? -1 : 1 
         this.speed = 5 * direction
         this.moving = true
-        this.image = "../assets/pan.png"
+        this.image = "./assets/pan.png"
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`

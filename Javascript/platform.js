@@ -6,7 +6,7 @@ class Platform {
         this.height = 30
         this.x = 80
         this.y = this.gameScreen.clientHeight - 30
-        this.image = "../assets/pan.png"
+        this.image = "./assets/pan.png"
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`

@@ -6,7 +6,7 @@ class WinPlatform {
         this.height = 76
         this.x = 540
         this.y = 20
-        this.image = "../assets/Untitled_Artwork.png"
+        this.image = "./assets/Untitled_Artwork.png"
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`

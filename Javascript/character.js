@@ -6,7 +6,7 @@ class player {
         this.height = 20
         this.x = 100
         this.y = 600
-        this.image = "../assets/fish.png"
+        this.image = "./assets/fish.png"
         
         this.velocityY = 0
         this.gravity = 0.9
