@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: aquaFont;
+    src: url(font/static/Tiny5Duo-Black.ttf);
+}
+
 .screen {
     width: 40vw;
     height: 90vh;
@@ -18,20 +23,73 @@
     align-items: center;
 }
 
+.start-screen p {
+    color: black;
+     text-align: center;
+  border-radius:25px;
+   width: 58%;
+   margin-top: 10px;
+  font-weight: bold;
+  background-color: rgb(254, 255, 216);
+  border: 2px solid black;
+}
+
+.start-screen h1 {
+    font-family: aquaFont;
+    color: black;
+     position: absolute;
+  top: 50px;
+  left: 26%;
+  width: 49%;
+  text-align: center;
+  border-radius:25px;
+  background-color: rgb(254, 255, 216);
+  border: 2px solid black;
+  
+}
+
+.start-btn {
+    font-family: aquaFont;
+    font-size: 40px;
+    width: 30%;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 40px;
+    left: 35%;
+}
+
 .game-screen,
 .win-screen,
 .end-screen {
     display: none;
 }
 
-.game-screen { 
+.game-screen,
+.start-screen { 
 background-image: url("./assets/b8b092eb13b38b3b596810e9e561965d.gif");
 background-size: cover;
 }
 
+.win-screen {
+background-image: url("./assets/winfish.png");
+background-size: 100%;
+background-position: center;
+}
+
+.win-screen h2 {
+    font-family: aquaFont;
+    color: black;
+    font-size: 300%;
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+}
+
 .end-screen{
-background-image: url("./assets/Grilled_Fish.webp");
-background-size: contain;
+background-image: url("./assets/gameover.png");
+background-size: 95%;
 background-position: center;
 
 }

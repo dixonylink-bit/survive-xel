@@ -4,8 +4,8 @@ class player {
         this.element = document.createElement("div")
         this.width = 30
         this.height = 20
-        this.x = 180
-        this.y = 460
+        this.x = 100
+        this.y = 600
         this.image = "../assets/fish.png"
         
         this.velocityY = 0

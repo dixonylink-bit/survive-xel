@@ -5,6 +5,7 @@ class Game {
         this.winScreen = document.querySelector(".win-screen")
         this.endScreen = document.querySelector(".end-screen")
         this.player = null
+        this.movingPlatform = null
         this.winPlatform = null
         this.platforms = []
         this.gameInterval = null
@@ -24,7 +25,13 @@ startGame() {
         this.platforms.forEach((platform) => {
             if (this.collisionDetection(this.player, platform) && this.player.velocityY > 0) {
                 this.player.bounce(platform)
+
+                if( this.movingPlatform && this.movingPlatform !== platform){
+                    this.movingPlatform.moving = true
+                }
+
                 platform.moving = false
+                this.movingPlatform = platform
 
             }
         })
@@ -58,8 +65,8 @@ animate() {
 spawnPlatform() {
   this.platforms.push(new Platform())
 
-  const rows = 6
-  const topGap = 120
+  const rows = 5
+  const topGap = 100
   const groundTop = this.gameScreen.clientHeight - 20
   const gap = (groundTop - topGap) / rows
 

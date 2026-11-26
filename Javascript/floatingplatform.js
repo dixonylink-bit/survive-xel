@@ -2,14 +2,14 @@ class FloatingPlatform {
     constructor(y) {
         this.gameScreen = document.querySelector(".game-screen")
         this.element = document.createElement("div")
-        this.width = 70
-        this.height = 10
+        this.width = 80
+        this.height = 28
         this.x = Math.floor(Math.random() * (this.gameScreen.clientWidth - this.width))
         this.y = y
         const direction = Math.random() < 0.5 ? -1 : 1 
         this.speed = 5 * direction
         this.moving = true
-        this.image = "../assets/pixel-art-swimming-pool-blue-8-bit-mosaic-tiles-and-water-texture-vector.jpg"
+        this.image = "../assets/pan.png"
 
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`
@@ -17,6 +17,10 @@ class FloatingPlatform {
         this.element.style.top = `${this.y}px`
         this.element.style.left = `${this.x}px`
         this.element.style.backgroundImage = `url("${this.image}")`
+        this.element.style.backgroundSize = "80%"
+        this.element.style.backgroundRepeat= "no-repeat"
+        this.element.style.backgroundPosition = "center"
+        this.element.style.imageRendering = "pixelated"
 
         this.gameScreen.appendChild(this.element)
     }

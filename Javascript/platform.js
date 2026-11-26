@@ -4,8 +4,8 @@ class Platform {
         this.element = document.createElement("div")
         this.width = 80
         this.height = 30
-        this.x = 150
-        this.y = this.gameScreen.clientHeight - 50
+        this.x = 80
+        this.y = this.gameScreen.clientHeight - 30
         this.image = "../assets/pan.png"
 
         this.element.style.position = "absolute"

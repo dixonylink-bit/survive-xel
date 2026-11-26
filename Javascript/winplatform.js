@@ -4,8 +4,8 @@ class WinPlatform {
         this.element = document.createElement("div")
         this.width = 90
         this.height = 76
-        this.x = 500
-        this.y = 40
+        this.x = 540
+        this.y = 20
         this.image = "../assets/Untitled_Artwork.png"
 
         this.element.style.position = "absolute"
